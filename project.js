@@ -1,21 +1,13 @@
-console.log('Welcome to Project 2');
-
-// To DO's
-// 1.Share
-
-//Constructor
 function  Book(name,author,type) {
     this.name = name;
     this.author = author;
     this.type = type;
 }
 
-// Display Constructor
 function Display() {
 
 }
 
-// Add method to display prototype
 Display.prototype.add = function(book){
     console.log("adding to ui");
     tableBody = document.getElementById('tableBody')
@@ -27,13 +19,11 @@ Display.prototype.add = function(book){
     tableBody.innerHTML +=  uiString;
 }
 
-// Implementing the clear function
 Display.prototype.clear = function(){
     let libraryForm = document.getElementById('libraryForm');
     libraryForm.reset();
 }
 
-// Implementing the validate function
 Display.prototype.validate = function(book){
     if (book.name.length<2 || book.author.length<2)
     {
@@ -54,7 +44,6 @@ Display.prototype.show = function(type,displayMessage){
   },2000);
 }
 
-// Add submit event listener to libraryForm
 let libraryForm = document.getElementById('libraryForm');
 libraryForm.addEventListener('submit',libraryFormSubmit);
 
@@ -89,7 +78,6 @@ function libraryFormSubmit(e){
         display.show('success',' Your book has been successfully added')
         }
     else{
-        // Show error to the user
         display.show('danger',' Sorry you cannot add this book.')
     }    
 }
